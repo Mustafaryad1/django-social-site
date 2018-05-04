@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+    <h1>{{ section }}</h1>
+    {% with total_images_created=request.user.images_created.count %}
+        <p>Welcome dashboard you have bookmark {{ total_images_created }} image</p>
+
+    {% endwith %}
+    <p>Drag the following button to your bookmarks toolbar to bookmarks images
+        <button class="btn-lg btn-primary" onclick="boo">Bookmark it</button> </p>
+    <p>you can also <a href="{% url 'edit' %}">edit your profile </a> or <a href="{% url 'change_password' %}">Change Password</a> </p>
+
+{% endblock %}
